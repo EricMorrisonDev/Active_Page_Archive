@@ -23,17 +23,16 @@ function tagLabel(slug: string): string {
 
 export function IssueMetaSidebar({ issue }: { issue: Issue }) {
   return (
-    <aside className="w-full shrink-0 border-b border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950 lg:w-80 lg:border-b-0 lg:border-r lg:border-neutral-200">
-      <div className="max-h-[45vh] overflow-y-auto p-6 lg:sticky lg:top-0 lg:max-h-screen">
-        <Link
-          href="/archive"
-          className="font-sans text-sm font-medium text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
-        >
-          ← Back to archive
-        </Link>
-        <h1 className="mt-6 font-serif text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
-          {issue.title}
-        </h1>
+    <div className="p-6 pb-10">
+      <Link
+        href="/"
+        className="font-sans text-sm font-medium text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+      >
+        ← All issues
+      </Link>
+      <h1 className="mt-6 font-serif text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        {issue.title}
+      </h1>
         <p className="mt-1 font-sans text-sm text-neutral-500 dark:text-neutral-400">
           {formatDisplayDate(issue.publication_date)}
         </p>
@@ -94,7 +93,6 @@ export function IssueMetaSidebar({ issue }: { issue: Issue }) {
             </ul>
           </div>
         ) : null}
-      </div>
-    </aside>
+    </div>
   );
 }
