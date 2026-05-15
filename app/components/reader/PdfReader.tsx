@@ -3,6 +3,7 @@
 import {
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -26,6 +27,13 @@ export function PdfReader({ fileUrl, page, onPageChange }: PdfReaderProps) {
 
   const safePage =
     numPages != null ? Math.min(Math.max(1, page), numPages) : Math.max(1, page);
+
+  const documentOptions = useMemo(
+    () => ({
+      wasmUrl: "/wasm/",
+    }),
+    []
+  );
 
   useEffect(() => {
     if (numPages != null && page > numPages) {
@@ -134,6 +142,7 @@ export function PdfReader({ fileUrl, page, onPageChange }: PdfReaderProps) {
         <div className="mx-auto flex w-full max-w-4xl justify-center">
           <Document
             file={fileUrl}
+            options={documentOptions}
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={onDocumentLoadError}
             loading={
