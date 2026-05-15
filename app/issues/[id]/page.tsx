@@ -1,0 +1,46 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
+
+import { IssueMetaSidebar } from "@/app/components/reader/IssueMetaSidebar";
+import { IssueReaderPanel } from "@/app/components/reader/IssueReaderPanel";
+import { getIssueById } from "@/lib/issues";
+
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const issue = getIssueById(id);
+  if (!issue) {
+    return { title: "Issue not found" };
+  }
+  return {
+    title: issue.title,
+    description: issue.summary ?? `Read ${issue.title} in the archive.`,
+  };
+}
+
+export default async function IssuePage({ params }: Props) {
+  const { id } = await params;
+  const issue = getIssueById(id);
+  if (!issue) {
+    notFound();
+  }
+
+  return (
+    <div className="flex min-h-0 flex-1 flex-col bg-neutral-100 lg:flex-row dark:bg-neutral-900">
+      <IssueMetaSidebar issue={issue} />
+      <Suspense
+        fallback={
+          <div className="flex flex-1 items-center justify-center bg-neutral-900 font-sans text-sm text-neutral-400">
+            Loading reader…
+          </div>
+        }
+      >
+        <IssueReaderPanel issue={issue} />
+      </Suspense>
+    </div>
+  );
+}
