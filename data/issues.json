@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1960-04",
+    "title": "April 1960",
+    "publication_date": "1960-04-01",
+    "cover_image": "/covers/1960-04.jpg",
+    "pdf_url": "/issues/1960-04.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-08",
+    "title": "April 1960",
+    "publication_date": "1960-08-01",
+    "cover_image": "/covers/1960-08.jpg",
+    "pdf_url": "/issues/1960-08.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-10",
+    "title": "April 1960",
+    "publication_date": "1960-10-01",
+    "cover_image": "/covers/1960-10.jpg",
+    "pdf_url": "/issues/1960-10.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-11",
+    "title": "April 1960",
+    "publication_date": "1960-11-01",
+    "cover_image": "/covers/1960-11.jpg",
+    "pdf_url": "/issues/1960-11.pdf",
+    "tags": [],
+    "featured_articles": []
+  }
+]
