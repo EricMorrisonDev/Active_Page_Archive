@@ -25,22 +25,24 @@ export function YearNav({
       className={`font-sans ${className}`}
       aria-label="Filter by year"
     >
-      <div className="-mx-1 flex gap-1 overflow-x-auto pb-1">
-        {showAll ? (
-          <YearButton
-            label="All"
-            pressed={selectedYear === null}
-            onClick={() => onYearChange(null)}
-          />
-        ) : null}
-        {years.map((year) => (
-          <YearButton
-            key={year}
-            label={String(year)}
-            pressed={selectedYear === year}
-            onClick={() => onYearChange(year)}
-          />
-        ))}
+      <div className="flex w-full justify-center overflow-x-auto pb-1">
+        <div className="flex flex-wrap justify-center gap-1">
+          {showAll ? (
+            <YearButton
+              label="All"
+              pressed={selectedYear === null}
+              onClick={() => onYearChange(null)}
+            />
+          ) : null}
+          {years.map((year) => (
+            <YearButton
+              key={year}
+              label={String(year)}
+              pressed={selectedYear === year}
+              onClick={() => onYearChange(year)}
+            />
+          ))}
+        </div>
       </div>
     </nav>
   );
