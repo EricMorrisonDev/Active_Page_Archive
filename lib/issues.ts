@@ -33,6 +33,24 @@ export function getIssuesByYear(year: number): Issue[] {
     .sort(compareByDateDesc);
 }
 
+/** Distinct publication years in the archive, newest first. */
+export function getArchiveYears(): number[] {
+  const set = new Set<number>();
+  for (const issue of issues) {
+    set.add(parseYear(issue.publication_date));
+  }
+  return [...set].sort((a, b) => b - a);
+}
+
+/** Demo year nav range (1960–1970). Swap to `getArchiveYears()` when real data spans multiple years. */
+export function getDemoYearNavYears(): number[] {
+  const years: number[] = [];
+  for (let y = 1960; y <= 1970; y++) {
+    years.push(y);
+  }
+  return years;
+}
+
 /** Distinct tag slugs in use, sorted alphabetically. */
 export function getAllTags(): IssueTagSlug[] {
   const set = new Set<IssueTagSlug>();

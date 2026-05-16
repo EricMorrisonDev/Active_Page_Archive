@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
-import { IssueGrid } from "@/app/components/archive/IssueGrid";
+import { ArchiveBrowse } from "@/app/components/archive/ArchiveBrowse";
 
 export const metadata: Metadata = {
   title: "Archive",
@@ -15,12 +16,17 @@ export default function HomePage() {
           Archive
         </h1>
         <p className="mt-2 max-w-2xl font-sans text-sm leading-relaxed text-neutral-600">
-          Every issue, sorted newest first. Year navigation and filters can plug
-          in above the grid as the demo grows.
+          Browse by year, then open an issue to read it in full.
         </p>
-        <div className="mt-10">
-          <IssueGrid />
-        </div>
+        <Suspense
+          fallback={
+            <p className="mt-10 font-sans text-sm text-neutral-500">
+              Loading archive…
+            </p>
+          }
+        >
+          <ArchiveBrowse />
+        </Suspense>
       </main>
     </div>
   );

@@ -6,10 +6,15 @@ import { IssueCard } from "./IssueCard";
 export type IssueGridProps = {
   /** When omitted, all issues from the data source are shown (newest first). */
   issues?: Issue[];
+  emptyMessage?: string;
   className?: string;
 };
 
-export function IssueGrid({ issues, className = "" }: IssueGridProps) {
+export function IssueGrid({
+  issues,
+  emptyMessage = "No issues in the archive yet.",
+  className = "",
+}: IssueGridProps) {
   const list = issues ?? getAllIssues();
 
   if (list.length === 0) {
@@ -17,7 +22,7 @@ export function IssueGrid({ issues, className = "" }: IssueGridProps) {
       <p
         className={`font-sans text-sm text-neutral-500 ${className}`}
       >
-        No issues in the archive yet.
+        {emptyMessage}
       </p>
     );
   }
