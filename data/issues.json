@@ -1,5 +1,32 @@
 [
   {
+    "id": "1960-01",
+    "title": "January 1960",
+    "publication_date": "1960-01-01",
+    "cover_image": "/covers/1960-01.jpg",
+    "pdf_url": "/issues/1960-01.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-02",
+    "title": "February 1960",
+    "publication_date": "1960-02-01",
+    "cover_image": "/covers/1960-02.jpg",
+    "pdf_url": "/issues/1960-02.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-03",
+    "title": "March 1960",
+    "publication_date": "1960-03-01",
+    "cover_image": "/covers/1960-03.jpg",
+    "pdf_url": "/issues/1960-03.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
     "id": "1960-04",
     "title": "April 1960",
     "publication_date": "1960-04-01",
@@ -9,11 +36,47 @@
     "featured_articles": []
   },
   {
+    "id": "1960-05",
+    "title": "May 1960",
+    "publication_date": "1960-05-01",
+    "cover_image": "/covers/1960-05.jpg",
+    "pdf_url": "/issues/1960-05.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-06",
+    "title": "June 1960",
+    "publication_date": "1960-06-01",
+    "cover_image": "/covers/1960-06.jpg",
+    "pdf_url": "/issues/1960-06.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-07",
+    "title": "July 1960",
+    "publication_date": "1960-07-01",
+    "cover_image": "/covers/1960-07.jpg",
+    "pdf_url": "/issues/1960-07.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
     "id": "1960-08",
     "title": "August 1960",
     "publication_date": "1960-08-01",
     "cover_image": "/covers/1960-08.jpg",
     "pdf_url": "/issues/1960-08.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-09",
+    "title": "September 1960",
+    "publication_date": "1960-09-01",
+    "cover_image": "/covers/1960-09.jpg",
+    "pdf_url": "/issues/1960-09.pdf",
     "tags": [],
     "featured_articles": []
   },
@@ -32,6 +95,15 @@
     "publication_date": "1960-11-01",
     "cover_image": "/covers/1960-11.jpg",
     "pdf_url": "/issues/1960-11.pdf",
+    "tags": [],
+    "featured_articles": []
+  },
+  {
+    "id": "1960-12",
+    "title": "December 1960",
+    "publication_date": "1960-12-01",
+    "cover_image": "/covers/1960-12.jpg",
+    "pdf_url": "/issues/1960-12.pdf",
     "tags": [],
     "featured_articles": []
   }
