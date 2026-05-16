@@ -34,7 +34,7 @@ export default async function IssuePage({ params }: Props) {
     <IssueReaderShell sidebar={<IssueMetaSidebar issue={issue} />}>
       <Suspense
         fallback={
-          <div className="flex flex-1 items-center justify-center bg-neutral-900 font-sans text-sm text-neutral-400">
+          <div className="flex flex-1 items-center justify-center bg-[var(--reader-chrome)] font-sans text-sm text-neutral-500">
             Loading reader…
           </div>
         }

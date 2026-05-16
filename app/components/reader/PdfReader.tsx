@@ -109,19 +109,19 @@ export function PdfReader({ fileUrl, page, onPageChange }: PdfReaderProps) {
 
   return (
     <div
-      className="flex min-h-0 flex-1 flex-col bg-neutral-900"
+      className="flex min-h-0 flex-1 flex-col bg-[var(--reader-canvas)]"
       ref={containerRef}
     >
-      <div className="flex shrink-0 items-center justify-center gap-2 border-b border-neutral-800 px-3 py-2 font-sans text-sm text-neutral-200">
+      <div className="flex shrink-0 items-center justify-center gap-2 border-b border-neutral-300/50 bg-white/85 px-3 py-2 font-sans text-sm text-neutral-700 shadow-sm backdrop-blur-sm">
         <button
           type="button"
           onClick={goPrev}
           disabled={safePage <= 1}
-          className="rounded border border-neutral-600 px-2 py-1 text-xs font-medium transition-colors hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-40"
+          className="rounded border border-neutral-300 bg-white px-2 py-1 text-xs font-medium text-neutral-800 shadow-sm transition-colors hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-40"
         >
           Previous
         </button>
-        <span className="tabular-nums text-neutral-300">
+        <span className="tabular-nums text-neutral-600">
           Page {safePage}
           {numPages != null ? ` of ${numPages}` : ""}
         </span>
@@ -129,15 +129,15 @@ export function PdfReader({ fileUrl, page, onPageChange }: PdfReaderProps) {
           type="button"
           onClick={goNext}
           disabled={numPages != null && safePage >= numPages}
-          className="rounded border border-neutral-600 px-2 py-1 text-xs font-medium transition-colors hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-40"
+          className="rounded border border-neutral-300 bg-white px-2 py-1 text-xs font-medium text-neutral-800 shadow-sm transition-colors hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-40"
         >
           Next
         </button>
       </div>
 
-      <div className="min-h-0 flex-1 overflow-auto px-4 py-6">
+      <div className="min-h-0 flex-1 overflow-auto bg-[var(--reader-canvas)] px-4 py-6">
         {loadError ? (
-          <p className="max-w-md font-sans text-sm text-red-300">{loadError}</p>
+          <p className="max-w-md font-sans text-sm text-red-800">{loadError}</p>
         ) : null}
         <div className="mx-auto flex w-full max-w-4xl justify-center">
           <Document
@@ -146,14 +146,14 @@ export function PdfReader({ fileUrl, page, onPageChange }: PdfReaderProps) {
             onLoadSuccess={onDocumentLoadSuccess}
             onLoadError={onDocumentLoadError}
             loading={
-              <p className="font-sans text-sm text-neutral-400">Loading PDF…</p>
+              <p className="font-sans text-sm text-neutral-500">Loading PDF…</p>
             }
             className="flex justify-center"
           >
             <Page
               pageNumber={safePage}
               width={pageWidth}
-              className="shadow-2xl"
+              className="shadow-lg ring-1 ring-neutral-300/40"
               renderTextLayer
               renderAnnotationLayer
             />

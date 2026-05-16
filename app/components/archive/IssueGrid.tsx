@@ -15,7 +15,7 @@ export function IssueGrid({ issues, className = "" }: IssueGridProps) {
   if (list.length === 0) {
     return (
       <p
-        className={`font-sans text-sm text-neutral-500 dark:text-neutral-400 ${className}`}
+        className={`font-sans text-sm text-neutral-500 ${className}`}
       >
         No issues in the archive yet.
       </p>

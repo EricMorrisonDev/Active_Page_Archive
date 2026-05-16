@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-full flex-1 flex-col bg-neutral-50 dark:bg-neutral-950">
+    <div className="flex min-h-full flex-1 flex-col bg-[var(--background)]">
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6">
-        <h1 className="font-serif text-3xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        <h1 className="font-serif text-3xl font-semibold tracking-tight text-neutral-900">
           Archive
         </h1>
-        <p className="mt-2 max-w-2xl font-sans text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+        <p className="mt-2 max-w-2xl font-sans text-sm leading-relaxed text-neutral-600">
           Every issue, sorted newest first. Year navigation and filters can plug
           in above the grid as the demo grows.
         </p>

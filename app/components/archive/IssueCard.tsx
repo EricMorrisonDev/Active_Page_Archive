@@ -43,7 +43,7 @@ export function IssueCard({ issue, className = "" }: IssueCardProps) {
         href={href}
         className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900"
       >
-        <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm bg-neutral-200/60 ring-1 ring-inset ring-neutral-200/80">
           <Image
             src={issue.cover_image}
             alt={`Cover — ${issue.title}`}
@@ -53,10 +53,10 @@ export function IssueCard({ issue, className = "" }: IssueCardProps) {
           />
         </div>
         <div className="mt-3 space-y-1">
-          <h2 className="font-serif text-base font-semibold leading-snug tracking-tight text-neutral-900 transition-colors group-hover:text-neutral-600 dark:text-neutral-100 dark:group-hover:text-neutral-300">
+          <h2 className="font-serif text-base font-semibold leading-snug tracking-tight text-neutral-900 transition-colors group-hover:text-neutral-600">
             {issue.title}
           </h2>
-          <p className="font-sans text-xs text-neutral-500 dark:text-neutral-400">
+          <p className="font-sans text-xs text-neutral-500">
             {formatDisplayDate(issue.publication_date)}
           </p>
           {visibleTags.length > 0 ? (
@@ -64,13 +64,13 @@ export function IssueCard({ issue, className = "" }: IssueCardProps) {
               {visibleTags.map((slug) => (
                 <li
                   key={slug}
-                  className="rounded-sm border border-neutral-200 bg-neutral-50 px-1.5 py-0.5 font-sans text-[11px] font-medium uppercase tracking-wide text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+                  className="rounded-sm border border-neutral-200/90 bg-white px-1.5 py-0.5 font-sans text-[11px] font-medium uppercase tracking-wide text-neutral-600 shadow-sm"
                 >
                   {tagLabel(slug)}
                 </li>
               ))}
               {extraTagCount > 0 ? (
-                <li className="font-sans text-[11px] text-neutral-400 dark:text-neutral-500">
+                <li className="font-sans text-[11px] text-neutral-400">
                   +{extraTagCount}
                 </li>
               ) : null}
